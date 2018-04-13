@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^4.12.1",
     "gh-pages": "^1.1.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
-    "start": "react-scripts start",
+    "predeploy": "REACT_APP_ENV=production npm run build",
+    "deploy": "REACT_APP_ENV=production gh-pages -b master -d build",
+    "start": "REACT_APP_ENV=development react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "REACT_APP_ENV=test react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "homepage": "https://deepakm-webonise.github.io/reactjs"
